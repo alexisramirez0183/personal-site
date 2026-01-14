@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded",() =>{
 
             images.forEach(file => {
                 const img = document.createElement("img");
-                img.src = "./images/" + file;
+                img.src = "./Images/" + file;
                 img.className = "portfolio_image";
                 img.alt = file;
                 gallery.appendChild(img);
