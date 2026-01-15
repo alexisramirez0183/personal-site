@@ -338,3 +338,10 @@ button{
     border:white;
     border-width: 4px 2px 4px 2px;
 }
+
+@media screen and (max-width: 600px) {
+  .nav  {
+    float: none;
+    width: 100%;
+  }
+}
