@@ -349,5 +349,8 @@ button{
     width:100%
   };
 
-  
+  #parent_stat_container{
+    height:fit-content;
+  }
+
 }
