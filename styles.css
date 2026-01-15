@@ -353,6 +353,7 @@ button{
     display:grid;
     grid-template-columns: 1fr;
     max-height:max-content;
+    width:fit-content;
   }
 
 }
