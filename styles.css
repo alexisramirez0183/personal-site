@@ -352,8 +352,9 @@ button{
   #parent_stat_container{
     display:grid;
     grid-template-columns: 1fr;
-    max-height:2em;
+    max-height:3em;
     width:fit-content;
+    gap: 0.5em
   }
 
 }
