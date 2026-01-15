@@ -264,11 +264,12 @@ p{
 
 .social_text{
     text-align:center;
+    justify-self: center;
     background-color:#D00E09;
     color:white;
     align-self:center;
     margin: 2rem;
-    max-width: 10vw;
+    max-width: auto;
     display: flexbox;
     padding: 15px;
     border:solid white;
