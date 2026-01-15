@@ -350,6 +350,8 @@ button{
   };
 
   #parent_stat_container{
+    display:grid;
+    grid-template-columns: 1fr;
     height:fit-content;
   }
 
