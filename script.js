@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     console.log("message input:",message.value);
     contact_form.submit();
     dataLayer.push({
-        event:'submitForm',
+        event:'submitContact',
         name: name_input.value,
     })
     };
