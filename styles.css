@@ -345,7 +345,7 @@ button{
     display:flex;
   };
 
-  .portfolio_image{
+  #gallery_container{
     display:grid;
     grid-template-columns: 1fr;
   }
