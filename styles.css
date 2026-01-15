@@ -343,5 +343,11 @@ button{
   #body_container, #homepage_body_container, #homepage_main_container {   
     flex-direction: column;
     display:flex;
-  }
+  };
+
+  .nav_contianer{
+    width:100%
+  };
+
+  
 }
