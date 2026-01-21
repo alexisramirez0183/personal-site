@@ -86,12 +86,14 @@ document.addEventListener("DOMContentLoaded",() =>{
     });
 
     function showBlogModal(event){
-        console.log("Blog Post Clicked!");
         event.preventDefault();
-        console.log("default behavior prevented!");
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
-
+        const clickedPost = event.target;
+        const postHref = clickedPost.href;
+        $.get(postHref, function (content){
+            $('body').append(content)
+        });
     };
 
     blogPost.addEventListener("click", showBlogModal);

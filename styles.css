@@ -342,7 +342,6 @@ button{
 
 #blog_modal{
     display:none;
-    scale: 80%;
     position:absolute;
     align-self: center;
     justify-self: center;
