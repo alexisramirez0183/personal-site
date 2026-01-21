@@ -86,9 +86,9 @@ document.addEventListener("DOMContentLoaded",() =>{
     });
 
     function showBlogModal(){
-        preventDefault();
         console.log("Blog Post Clicked!");
-        const clickedPost = event.target;
+        preventDefault();
+        console.log("default behavior prevented!");
         blogModal.style.display = "block";
     };
 
