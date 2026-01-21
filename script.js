@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded",() =>{
     const modal = document.getElementById("modal");
     const galleryImages = document.querySelectorAll("#gallery_container img");
     const closeBtn = document.getElementById("closeBtn");
-    const galleryContainer = document.getElementById("gallery_container")
-    const blogModal = document.getElementById("blog_modal")
-    const blogPost = document.getElementsByClassName("individual_blog_post")
+    const galleryContainer = document.getElementById("gallery_container");
+    const blogModal = document.getElementById("blog_modal");
+    const blogPost = document.getElementsByClassName("individual_blog_post");
 
     // Contact Form
     if (!contact_form){
