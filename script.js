@@ -86,7 +86,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
-    const testButton = getElementById("test_button")
+    const testButton = getElementById("test_button");
+    
     function showBlogModal(event){
         event.preventDefault();
         blogModal.style.display = "block";
@@ -101,6 +102,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         .catch((error) => {
         console.warn(error);
         }); 
+
         if (!closeBtn){
             console.log("close button for modal not found")
         } else{ 
