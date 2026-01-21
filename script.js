@@ -91,9 +91,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog modal display changed to block!");
         const clickedPost = event.target;
         const postHref = clickedPost.href;
-        $.get(postHref, function (content){
-            $('body').append(content)
-        });
+        console.log(postHref)
     };
 
     blogPost.addEventListener("click", showBlogModal);
