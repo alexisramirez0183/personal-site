@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
-    function showBlogModal(){
+    function showBlogModal(event){
         console.log("Blog Post Clicked!");
-        blogPost.preventDefault();
+        event.preventDefault();
         console.log("default behavior prevented!");
         blogModal.style.display = "block";
     };
