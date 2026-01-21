@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     function closeModal() {
         modal.style.display = "none";
+        blogModal.style.display = "none";
     };
 
     document.addEventListener("keydown", e => {
