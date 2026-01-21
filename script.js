@@ -101,6 +101,12 @@ document.addEventListener("DOMContentLoaded",() =>{
         .catch((error) => {
         console.warn(error);
         }); 
+        if (!closeBtn){
+            console.log("close button for modal not found")
+        } else{ 
+        console.log("close button found!")
+    };
+        console.log()
     };
 
     blogPost.addEventListener("click", showBlogModal);
