@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const blogModal = document.getElementById("blog_modal");
     const blogPost = document.getElementById("individual_blog_post");
     const testButton = getElementById("test_button");
-    
+
     // Contact Form
     if (!contact_form){
         console.log("contact form not on page")
@@ -108,15 +108,8 @@ document.addEventListener("DOMContentLoaded",() =>{
             console.log("close button found!")
         };
 
-        // if (!testButton){
-        //     console.log("test button for modal not found")
-        // } else{ 
-        //     console.log("test button found!")
-        // };
-
-        closeBtn.addEventListener("click", closeModal);
+        // closeBtn.addEventListener("click", closeModal);
     };
 
     blogPost.addEventListener("click", showBlogModal);
-
 });
