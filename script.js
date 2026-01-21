@@ -100,8 +100,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         .catch((error) => {
         console.warn(error);
         }); 
-        const closeBtn = document.getElementById("closeBtn");
-        closeBtn.addEventListener("click", closeModal);
     };
 
     blogPost.addEventListener("click", showBlogModal);
