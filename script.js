@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     if (!closeBtn){
         console.log("close button for modal not found")
     } else{
+        console.log("close button found!")
         closeBtn.addEventListener("click", closeModal);
     };
 
