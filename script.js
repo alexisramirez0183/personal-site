@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     });
 
     const testButton = getElementById("test_button");
-    
+
     function showBlogModal(event){
         event.preventDefault();
         blogModal.style.display = "block";
@@ -109,13 +109,13 @@ document.addEventListener("DOMContentLoaded",() =>{
             console.log("close button found!")
         };
 
-        if (!testButton){
-            console.log("test button for modal not found")
-        } else{ 
-            console.log("test button found!")
-        };
+        // if (!testButton){
+        //     console.log("test button for modal not found")
+        // } else{ 
+        //     console.log("test button found!")
+        // };
 
-        closeBtn.addEventListener("click", closeModal)
+        closeBtn.addEventListener("click", closeModal);
     };
 
     blogPost.addEventListener("click", showBlogModal);
