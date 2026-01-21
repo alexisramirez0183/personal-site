@@ -90,6 +90,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         event.preventDefault();
         console.log("default behavior prevented!");
         blogModal.style.display = "block";
+        console.log("blog modal display changed to block!");
+
     };
 
     blogPost.addEventListener("click", showBlogModal);
