@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const closeBtn = document.getElementById("closeBtn");
     const galleryContainer = document.getElementById("gallery_container");
     const blogModal = document.getElementById("blog_modal");
-    const blogPost = document.getElementsById("individual_blog_post");
+    const blogPost = document.getElementById("individual_blog_post");
 
     // Contact Form
     if (!contact_form){
