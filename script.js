@@ -34,13 +34,6 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     // Gallery 
 
-    if (!closeBtn){
-        console.log("close button for modal not found")
-    } else{
-        console.log("close button found!")
-        closeBtn.addEventListener("click", closeModal);
-    };
-
     if (!galleryContainer){
         console.log("No gallery container rendered")
     } else{
@@ -74,6 +67,12 @@ document.addEventListener("DOMContentLoaded",() =>{
         modalImg.src = src;
         modalImg.alt = alt;
         modal.style.display = "block";
+        if (!closeBtn){
+        console.log("close button for modal not found")
+        } else{
+        console.log("close button found!")
+        closeBtn.addEventListener("click", closeModal);
+    };
     };
 
     function closeModal() {
