@@ -345,9 +345,11 @@ button{
     scale: 80%;
     position:absolute;
     align-self: center;
-    justify-items: center;
     justify-self: center;
     border-width: 20px;
+    width:200px;
+    height: 200px;
+    background-color: white;
 }
 
 @media (max-width: 700px) {
