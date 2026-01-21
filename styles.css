@@ -340,6 +340,16 @@ button{
     border-width: 4px 2px 4px 2px;
 }
 
+#blog_modal{
+    display:none;
+    scale: 80%;
+    position:absolute;
+    align-self: center;
+    justify-items: center;
+    justify-self: center;
+    border-width: 20px;
+}
+
 @media (max-width: 700px) {
   #body_container, #homepage_body_container, #homepage_main_container{   
     flex-direction: column;
