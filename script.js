@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const galleryContainer = document.getElementById("gallery_container");
     const blogModal = document.getElementById("blog_modal");
     const blogPost = document.getElementById("individual_blog_post");
-    
+
     // Contact Form
     if (!contact_form){
         console.log("contact form not on page")
@@ -86,6 +86,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
+    const testButton = document.getElementById("test_button");
+
     function showBlogModal(event){
         event.preventDefault();
         blogModal.style.display = "block";
@@ -107,8 +109,15 @@ document.addEventListener("DOMContentLoaded",() =>{
             console.log("close button found!")
         };
 
-        // closeBtn.addEventListener("click", closeModal);
+        if (!testButton){
+            console.log("test button for modal not found")
+        } else{ 
+            console.log("test button found!")
+        };
+
+        closeBtn.addEventListener("click", closeModal);
     };
 
     blogPost.addEventListener("click", showBlogModal);
+
 });
