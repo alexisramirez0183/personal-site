@@ -86,8 +86,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
-    const testButton = document.getElementById("test_button");
-
     function showBlogModal(event){
         event.preventDefault();
         blogModal.style.display = "block";
@@ -102,10 +100,12 @@ document.addEventListener("DOMContentLoaded",() =>{
         .catch((error) => {
         console.warn(error);
         }); 
-        const closeBtn = document.getElementById("closeBtn");
-        closeBtn.addEventListener("click", closeModal);
+
     };
 
     blogPost.addEventListener("click", showBlogModal);
 
 });
+
+const closeBtn = document.getElementById("closeBtn");
+closeBtn.addEventListener("click", closeModal);
