@@ -91,8 +91,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log(clickedPost)
     }
 
-    blogPost.addEventListener("click"){
-        showBlogModal()
-    }
+    blogPost.addEventListener("click", showBlogModal)
 
 });
