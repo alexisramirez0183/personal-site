@@ -102,19 +102,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         .catch((error) => {
         console.warn(error);
         }); 
-
-        if (!closeBtn){
-            console.log("close button for modal not found")
-        } else{ 
-            console.log("close button found!")
-        };
-
-        if (!testButton){
-            console.log("test button for modal not found")
-        } else{ 
-            console.log("test button found!")
-        };
-
+        const closeBtn = document.getElementById("closeBtn")
         closeBtn.addEventListener("click", closeModal);
     };
 
