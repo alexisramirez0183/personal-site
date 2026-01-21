@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const galleryContainer = document.getElementById("gallery_container");
     const blogModal = document.getElementById("blog_modal");
     const blogPost = document.getElementById("individual_blog_post");
-    const testButton = getElementById("test_button");
-
+    
     // Contact Form
     if (!contact_form){
         console.log("contact form not on page")
