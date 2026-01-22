@@ -2,9 +2,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "blog_posts/**"
+      - "Images/**"
 permissions:
   contents: write
-  
+
 jobs:
   build:
     name: update_JSON_files
