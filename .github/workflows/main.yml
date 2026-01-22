@@ -15,8 +15,8 @@ jobs:
         python-version: "3.10"
     - name: execute portfolio script
       run: |
-        update_portfolio_JSON.py
+        python update_portfolio_JSON.py
     - name: execute blog script
       run: |
-        update_blog_JSON.py
+        python update_blog_JSON.py
 
