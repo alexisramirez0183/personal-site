@@ -1,8 +1,6 @@
 on:
   push:
     paths:
-      - '/blog_posts/**'
-      - '/Images/**'
 
 jobs:
   build:
