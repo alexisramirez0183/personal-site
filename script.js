@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const galleryContainer = document.getElementById("gallery_container");
     const blogModal = document.getElementById("blog_modal");
     const blogPost = document.getElementById("individual_blog_post");
+    const blogContainer = document.getElementById("blog_parent_container")
 
     // Contact Form
     if (!contact_form){
@@ -108,4 +109,17 @@ document.addEventListener("DOMContentLoaded",() =>{
             blogModal.style.display = "none"
         }
     });
+
+    if (!blogContainer){
+        console.log("No blog container rendered")
+    } else{
+        console.log("blog container found");
+        insertBlogEntries();
+    };
+
+    function insertBlogEntries(){
+        fetch("blog_posts.json?nocache=" + Date.now())
+        .then(res => res.json())
+        console.log(res)
+    };
 });
