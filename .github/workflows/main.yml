@@ -1,7 +1,5 @@
 on:
   push:
-    paths:
-
 jobs:
   build:
     name: update_image_list_JSON
