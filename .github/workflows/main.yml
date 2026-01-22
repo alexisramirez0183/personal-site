@@ -2,7 +2,7 @@ on:
   push:
 jobs:
   build:
-    name: update_image_list_JSON
+    name: update_JSON_files
     runs-on: ubuntu-latest
     steps:
     - name: checkout
