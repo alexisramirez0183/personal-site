@@ -5,4 +5,4 @@ filepath = './Images/'
 
 filenames = os.listdir(filepath)
 
-print(filenames)
+print(filenames) 
