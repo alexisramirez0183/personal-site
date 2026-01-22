@@ -116,10 +116,4 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog container found");
         insertBlogEntries();
     };
-
-    function insertBlogEntries(){
-        fetch("blog_posts.json?nocache=" + Date.now())
-        .then(res => res.json())
-        .then(json => console.log(json))
-    };
 });
