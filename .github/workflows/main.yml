@@ -3,3 +3,11 @@ on:
     paths:
       - '/blog_posts/**'
       - '/Images/**'
+
+jobs:
+  build:
+    name: update_image_JSON
+    runs-on: ubuntu-latest
+    steps:
+      
+
