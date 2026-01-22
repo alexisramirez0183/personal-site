@@ -120,6 +120,6 @@ document.addEventListener("DOMContentLoaded",() =>{
     function insertBlogEntries(){
         fetch("blog_posts.json?nocache=" + Date.now())
         .then(res => res.json())
-        console.log(res)
+        .then(console.log(res))
     };
 });
