@@ -110,6 +110,10 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
+    function insertBlogEntries(){
+        
+    }
+
     if (!blogContainer){
         console.log("No blog container rendered")
     } else{
