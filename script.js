@@ -111,7 +111,10 @@ document.addEventListener("DOMContentLoaded",() =>{
     });
 
     function insertBlogEntries(){
-        
+        fetch("blog_post.json?nocache=" + Date.now())
+        .then(res)
+
+        print(res)
     }
 
     if (!blogContainer){
