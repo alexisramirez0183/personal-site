@@ -1,6 +1,6 @@
 import data from "./blog_posts.json" assert {type:"json"}
 
-console.log(f,"data from blog posts JSON", data);
+console.log("data from blog posts JSON", data);
 
 document.addEventListener("DOMContentLoaded",() =>{
 
