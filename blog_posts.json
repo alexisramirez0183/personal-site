@@ -1,20 +1,24 @@
 [
     {
+        "file_path": "./blog_posts/blog_post_test2.html",
         "post_title": "Blog Post 1 Test",
         "post_date": "2026-01-21",
         "post_description": "this is a test description to see if I can extract it"
     },
     {
+        "file_path": "./blog_posts/blog_post_test_1.html",
         "post_title": "Blog Post 1 Test",
         "post_date": "2026-01-21",
         "post_description": "this is a test description to see if I can extract it"
     },
     {
+        "file_path": "./blog_posts/blog_post_test_3.html",
         "post_title": "Blog Post 1 Test",
         "post_date": "2026-01-21",
         "post_description": "this is a test description to see if I can extract it"
     },
     {
+        "file_path": "./blog_posts/blog_post_Upodate.html",
         "post_title": "Blog Post 1 Test",
         "post_date": "2026-01-21",
         "post_description": "this is a test description to see if I can extract it"
