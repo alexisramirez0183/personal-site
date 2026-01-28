@@ -12,5 +12,9 @@ json_file = "./portfolio_images.json"
 with open (json_file,'w') as file:
     json.dump(filenames, file, indent=4)
 
+with open (json_file,'r') as file:
+    updated_json = json.load(file)
+    print(f"new JSON:", updated_json)
+
 
 
