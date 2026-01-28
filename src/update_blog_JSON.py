@@ -27,7 +27,8 @@ for file in filenames:
 
     #Appending to post_info array
     single_post_json = {
-        "post_title":post_title,
+        "file_path": file_path_for_soup,
+        "post_title": post_title,
         "post_date": post_date,
         "post_description": post_description
     }
