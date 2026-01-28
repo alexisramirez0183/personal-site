@@ -1,3 +1,7 @@
+import data from "./blog_posts.json" assert {type:"json"}
+
+console.log(f,"data from blog posts JSON", data);
+
 document.addEventListener("DOMContentLoaded",() =>{
 
     const send_button = document.getElementById("send_button");
@@ -112,7 +116,8 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     function insertBlogEntries(){
         fetch("blog_post.json?nocache=" + Date.now())
-        .then(res)
+        .then(res => res.json())
+        const parent_container = document.getElementById("blog_parent_container")
 
         console.log(res)
     }
