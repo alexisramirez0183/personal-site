@@ -1,4 +1,4 @@
-import data from "./blog_posts.json" assert {type:"json"}
+import data from './blog_posts.json';
 
 console.log("data from blog posts JSON", data);
 
