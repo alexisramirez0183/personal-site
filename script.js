@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         fetch("blog_post.json?nocache=" + Date.now())
         .then(res)
 
-        print(res)
+        console.log(res)
     }
 
     if (!blogContainer){
