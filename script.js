@@ -1,7 +1,3 @@
-import data from './blog_posts.json';
-
-console.log("data from blog posts JSON", data);
-
 document.addEventListener("DOMContentLoaded",() =>{
 
     const send_button = document.getElementById("send_button");
@@ -117,15 +113,20 @@ document.addEventListener("DOMContentLoaded",() =>{
     function insertBlogEntries(){
         fetch("blog_post.json?nocache=" + Date.now())
         .then(res => res.json())
-        const parent_container = document.getElementById("blog_parent_container")
+        .then(json => {
 
-        console.log(res)
-    }
+            const parent_container = document.getElementById("blog_parent_container")
+            
+            console.log(res)
+
+        })
+    };
 
     if (!blogContainer){
         console.log("No blog container rendered")
     } else{
         console.log("blog container found");
         insertBlogEntries();
+        console.log("insert entries function ran")
     };
 });
