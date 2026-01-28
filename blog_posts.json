@@ -1,6 +1,22 @@
 [
-    "blog_post_test2.html",
-    "blog_post_test_1.html",
-    "blog_post_test_3.html",
-    "blog_post_Upodate.html"
+    {
+        "post_title": "Blog Post 1 Test",
+        "post_date": "2026-01-21",
+        "post_description": "this is a test description to see if I can extract it"
+    },
+    {
+        "post_title": "Blog Post 1 Test",
+        "post_date": "2026-01-21",
+        "post_description": "this is a test description to see if I can extract it"
+    },
+    {
+        "post_title": "Blog Post 1 Test",
+        "post_date": "2026-01-21",
+        "post_description": "this is a test description to see if I can extract it"
+    },
+    {
+        "post_title": "Blog Post 1 Test",
+        "post_date": "2026-01-21",
+        "post_description": "this is a test description to see if I can extract it"
+    }
 ]
