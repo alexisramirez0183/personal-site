@@ -102,29 +102,11 @@ document.addEventListener("DOMContentLoaded",() =>{
         }); 
     };
 
-
-
     document.addEventListener("click", (e) => {
         if (e.target.matches("#closeBtn")){
             blogModal.style.display = "none"
         }
     });
-
-    // function populate(){
-    //     fetch("blog_posts.json?nocache="+ Date.now())
-    //     .then(res => res.json())
-    //     .then(obj => {
-    //         const data = obj;
-
-    //         data.forEach(insertBlogEntries);
-    //         // const postDate = data[1].post_info.post_date;
-    //         // consdole.log("post date:", postDate)
-
-    //         // const parent_container = document.getElementById("blog_parent_container")
-    //         // const myLink = document.createElement("a");
-    //         // parent_container.appendChild(myLink)
-    //     })
-    // };
 
     async function populate(){
         const jsonURL = "blog_posts.json?nocache="+ Date.now()
@@ -134,8 +116,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("Post Array:", postArray);
 
         populatePosts(postArray);
-        // populatePostInfo(postArray);
-
     };
 
     function populatePosts(obj){
@@ -168,21 +148,12 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     }
 
-    // function insertBlogEntries(obj){
-    //     const parent_container = document.getElementById("blog_parent_container")
-    //     const myLink = document.createElement("a");
-    //     console.log("object output:", obj)
-    //     myLink.textContent = obj.file_path;
-    //     console.log("Attempting to append <a> tag to div")
-    //     parent_container.appendChild(myLink);
-    // };
-
     if (!blogContainer){
         console.log("No blog container rendered")
     } else{
         console.log("blog container found");
         console.log("attempting to run populate function")
-        blogPost.addEventListener("click", showBlogModal);
         populate();
+        blogPost.addEventListener("click", showBlogModal);
     };
 });
