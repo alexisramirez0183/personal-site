@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         const request = new Request(requestURL);
         const response = await fetch(request);
         const blogEntry = await reponse.json();
+        console.log("attempting to run insertBlogEntries function")
         insertBlogEntries();
     };
 
@@ -124,6 +125,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         const parent_container = document.getElementById("blog_parent_container")
         const myLink = document.createElement("a");
         // myLink.textContent = obj.file_path;
+        console.log("Attempting to append <a> tag to div")
         parent_container.appendChild(myLink);
     };
 
@@ -131,7 +133,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("No blog container rendered")
     } else{
         console.log("blog container found");
+        console.log("attempting to run populate function")
         populate();
-        console.log("insert entries function ran")
     };
 });
