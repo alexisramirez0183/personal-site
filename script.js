@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     function populatePosts(obj){
         const parent_container = document.getElementById("blog_parent_container")
         const singlePost = document.createElement("a");
-        singlePost.setAttribute("id", "individual post")
+        singlePost.setAttribute("id", "individual_blog_post")
         singlePost.setAttribute("href","[insert URL here]")
         parent_container.appendChild(singlePost)
 
