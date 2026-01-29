@@ -111,7 +111,9 @@ document.addEventListener("DOMContentLoaded",() =>{
     });
 
     async function populate(){
-        const requestURL = "blog_post.json?nocache=";
+        const rootURL = "blog_posts.json?nocache=";
+        const date = Date.now();
+        const requestURL = rootURL+ date;
         const request = new Request(requestURL);
         const response = await fetch(request);
         const blogEntry = await reponse.json();
