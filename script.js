@@ -110,19 +110,26 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
-    function populate(){
-        fetch("blog_posts.json?nocache="+ Date.now())
-        .then(res => res.json())
-        .then(obj => {
-            const data = obj;
-            const postDate = data[1].post_info.post_date;
-            console.log("post date:", postDate)
+    // function populate(){
+    //     fetch("blog_posts.json?nocache="+ Date.now())
+    //     .then(res => res.json())
+    //     .then(obj => {
+    //         const data = obj;
 
-            // const parent_container = document.getElementById("blog_parent_container")
-            // const myLink = document.createElement("a");
-            // parent_container.appendChild(myLink)
-        })
-    };
+    //         data.forEach(insertBlogEntries);
+    //         // const postDate = data[1].post_info.post_date;
+    //         // consdole.log("post date:", postDate)
+
+    //         // const parent_container = document.getElementById("blog_parent_container")
+    //         // const myLink = document.createElement("a");
+    //         // parent_container.appendChild(myLink)
+    //     })
+    // };
+
+    async function populate(){
+        const jsonURL = "blog_posts.json?nocache="+ Date.now()
+        console.log (jsonURL)
+    }
 
     // function insertBlogEntries(obj){
     //     const parent_container = document.getElementById("blog_parent_container")
