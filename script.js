@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const closeBtn = document.getElementById("closeBtn");
     const galleryContainer = document.getElementById("gallery_container");
     const blogModal = document.getElementById("blog_modal");
-    const blogPost = document.querySelectorAll("#individual_blog_post");
+    const blogPosts = document.querySelectorAll("#individual_blog_post");
     const blogContainer = document.getElementById("blog_parent_container")
 
     // Contact Form
@@ -156,6 +156,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog container found");
         console.log("attempting to run populate function")
         populate();
-        blogPost.addEventListener("click", showBlogModal);
+        blogPosts.forEach(blogPost =>{
+            addEventListener("click", showBlogModal)
+        });
     };
 });
