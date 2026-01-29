@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         fetch("blog_posts.json?nocache="+ Date.now())
         .then(res => res.json())
         .then(res => console.log("this is the response variable POST .JSON():", res))
-        .then(post =>)
+        // .then(post =>)
 
     };
 
