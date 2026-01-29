@@ -149,8 +149,8 @@ document.addEventListener("DOMContentLoaded",() =>{
             
             // Add Title of each post as an H3
             const postTitle = document.createElement("h3");
-            const jsonTitle = obj.post_title;
-            console.log(jsonTitle);
+            const jsonTitle = obj.post_date;
+            console.log("post date", jsonTitle);
             postTitle.classList.add("blog_title");
             postTitle.textContent = jsonTitle
 
