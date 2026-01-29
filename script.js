@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("Post Array:", postArray);
 
         populatePosts(postArray);
-        populatePostInfo(postArray);
+        // populatePostInfo(postArray);
 
     };
 
