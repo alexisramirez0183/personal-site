@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         const requestURL = rootURL+ date;
         const request = new Request(requestURL);
         const response = fetch(request);
+        console.log(response);
         const blogEntry = response.json();
         console.log("attempting to run insertBlogEntries function")
         insertBlogEntries();
