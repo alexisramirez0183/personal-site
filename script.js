@@ -140,19 +140,27 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     function populatePosts(obj){
         const parent_container = document.getElementById("blog_parent_container")
-        const singlePost = document.createElement("a");
-        singlePost.setAttribute("id", "individual_blog_post")
-        singlePost.setAttribute("href","[insert URL here]")
-        const postTitle = document.createElement("h3");
-        postTitle.classList.add("blog_title")
-        const postDescription = document.createElement("p");
-        const postDate = document.createElement("p")
-        postDate.classList.add("blog_date")
+        const posts = obj
 
-        parent_container.appendChild(singlePost)
-        singlePost.appendChild(postTitle, postDescription, postDate)
-        singlePost.appendChild(postDescription)
-        singlePost.appendChild(postDate)
+        for (const post of posts) {
+            const singlePost = document.createElement("a");
+            singlePost.setAttribute("id", "individual_blog_post")
+            singlePost.setAttribute("href","[insert URL here]")
+            
+            const postTitle = document.createElement("h3");
+            postTitle.classList.add("blog_title")
+            console.log("post title within populate posts function:", post.post_title)
+            
+            const postDescription = document.createElement("p");
+            
+            const postDate = document.createElement("p")
+            postDate.classList.add("blog_date")
+
+            parent_container.appendChild(singlePost)
+            singlePost.appendChild(postTitle, postDescription, postDate)
+            singlePost.appendChild(postDescription)
+            singlePost.appendChild(postDate)
+        }
 
     }
 
