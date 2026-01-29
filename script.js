@@ -150,7 +150,9 @@ document.addEventListener("DOMContentLoaded",() =>{
         postDate.classList.add("blog_date")
 
         parent_container.appendChild(singlePost)
-        singlePost.appendChild(postTitle,postDescription,postDate)
+        singlePost.appendChild(postTitle, postDescription, postDate)
+        singlePost.appendChild(postDescription)
+        singlePost.appendChild(postDate)
 
     }
 
