@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         fetch("blog_posts.json?nocache="+ Date.now())
         .then(res => res.json())
         .then(obj => {
-            data = obj;
+            const data = obj;
             const myLink = document.createElement("a");
             console.log("file path objects log", data)
             const postTitle = data[1]
