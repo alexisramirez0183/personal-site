@@ -130,9 +130,22 @@ document.addEventListener("DOMContentLoaded",() =>{
         const jsonURL = "blog_posts.json?nocache="+ Date.now()
         const request = new Request(jsonURL);
         const response = await fetch(request);
-        const blogPost = await response.json();
-        console.log("list of posts", blogPost)
+        const postArray = await response.json();
+        console.log("Post Array:", postArray);
+
+        populatePosts(postArray);
+        populatePostInfo(postArray);
+
     };
+
+    function populatePosts(obj){
+        const parent_container = document.getElementById("blog_parent_container")
+        const singlePost = document.createElement("a");
+        singlePost.setAttribute("id", "individual post")
+        singlePost.setAttribute("href","[insert URL here]")
+        parent_container.appendChild(singlePost)
+
+    }
 
     // function insertBlogEntries(obj){
     //     const parent_container = document.getElementById("blog_parent_container")
