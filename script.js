@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const closeBtn = document.getElementById("closeBtn");
     const galleryContainer = document.getElementById("gallery_container");
     const blogModal = document.getElementById("blog_modal");
-    const blogPost = document.getElementById("individual_blog_post");
+    const blogPost = document.querySelectorAll("#individual_blog_post");
     const blogContainer = document.getElementById("blog_parent_container")
 
     // Contact Form
@@ -146,8 +146,6 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.appendChild(postTitle, postDescription, postDate)
             singlePost.appendChild(postDescription)
             singlePost.appendChild(postDate)
-
-            post.addEventListener("click", showBlogModal)
         }
 
     }
@@ -158,6 +156,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog container found");
         console.log("attempting to run populate function")
         populate();
-        // blogPost.addEventListener("click", showBlogModal);
+        blogPost.addEventListener("click", showBlogModal);
     };
 });
