@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         for (const post of posts) {
             const singlePost = document.createElement("a");
             singlePost.setAttribute("id", "individual_blog_post")
-            singlePost.setAttribute("href","[insert URL here]")
+            singlePost.setAttribute("href", post.file_path)
             
             // Add Title of each post as an H3
             const postTitle = document.createElement("h3");
@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             postTitle.textContent = post.post_title;
 
             const postDescription = document.createElement("p");
+            postDescription.textContent = post.post_description;
             
             const postDate = document.createElement("p");
             postDate.classList.add("blog_date");
@@ -162,7 +163,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.appendChild(postTitle, postDescription, postDate)
             singlePost.appendChild(postDescription)
             singlePost.appendChild(postDate)
-            
+
         }
 
     }
