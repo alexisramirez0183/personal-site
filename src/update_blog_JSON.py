@@ -27,10 +27,12 @@ for file in filenames:
 
     #Appending to post_info array
     single_post_json = {
-        "file_path": file_path_for_soup,
         "post_title": post_title,
-        "post_date": post_date,
-        "post_description": post_description
+        "post_info":{
+            "file_path": file_path_for_soup,
+            "post_date": post_date,
+            "post_description": post_description
+        }
     }
 
     final_json.append(single_post_json)
