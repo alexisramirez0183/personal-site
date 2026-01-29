@@ -148,9 +148,9 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.setAttribute("href","[insert URL here]")
             
             const postTitle = document.createElement("h3");
-            postTitle.classList.add("blog_title")
-            console.log("post title within populate posts function:", post.post_title)
-            
+            const jsonTitle = obj.post_title
+            postTitle.classList.add("blog_title");
+            postTitle.textContent = jsonTitle
             const postDescription = document.createElement("p");
             
             const postDate = document.createElement("p")
