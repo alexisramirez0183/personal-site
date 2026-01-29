@@ -110,16 +110,19 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
-    function insertBlogEntries(){
-        fetch("blog_post.json?nocache=" + Date.now())
-        .then(res => res.json())
-        .then(json => {
+    async function populate(){
+        const requestURL = "blog_post.json?nocache=";
+        const request = new Request(requestURL);
+        const response = await fetch(request);
+        const blogEntry = await reponse.json();
+        insertBlogEntries()
+    };
 
-            const parent_container = document.getElementById("blog_parent_container")
-            
-            console.log(res)
-
-        })
+    function insertBlogEntries(obj){
+        const parent_container = document.getElementById("blog_parent_container")
+        const myH1 = document.createElement("h1");
+        myH1.textContent = obj.post_title;
+        parent_container.appendChild(myH1)
     };
 
     if (!blogContainer){
