@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.json())
         .then(obj => {
             const data = obj;
-            const postdate = data[1].post_info.post_date
+            const postdate = data[1].post_info.post_date;
             console.log("post date:", postDate)
 
             // const parent_container = document.getElementById("blog_parent_container")
