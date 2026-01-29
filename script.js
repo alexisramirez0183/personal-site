@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.json())
         .then(obj => {
             const myLink = document.createElement("a");
-            console.log("file path objects log", obj.file_path)
+            console.log("file path objects log", obj.Object)
         })
         // .then(post =>)
     };
