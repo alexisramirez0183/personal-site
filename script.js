@@ -114,7 +114,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         const rootURL = "blog_posts.json?nocache=";
         const date = Date.now();
         const requestURL = rootURL+ date;
-        // const request = new Request(requestURL);
+        const request = new Request(requestURL);
+        console.log(request)
         const response = fetch(requestURL);
         console.log(response);
         const blogEntry = response.json();
