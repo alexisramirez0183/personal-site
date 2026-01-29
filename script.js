@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     function populate(){
         fetch("blog_posts.json?nocache="+ Date.now())
         .then(res => res.json())
-        .then(console.log("this is the response variable POST .JSON():", response))
+        .then(console.log("this is the response variable POST .JSON():", res))
         console.log("attempting to run insertBlogEntries function")
         insertBlogEntries(blogEntry);
     };
