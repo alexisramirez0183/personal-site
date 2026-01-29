@@ -116,7 +116,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(obj => {
             const myLink = document.createElement("a");
             console.log("file path objects log", obj)
-            postTitle = obj.post_title
+            const postTitle = obj.post_title
+            console.log(postTitle)
         })
     };
 
