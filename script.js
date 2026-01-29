@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded",() =>{
     function fetchPortfolioImages(){
         fetch("portfolio_images.json?nocache=" + Date.now())
         .then(res => res.json())
-        .then(res => console.log("this is the response in json format:", res))
         .then(images => {
         const gallery = document.getElementById("gallery_container");
 
@@ -116,7 +115,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.json())
         .then(res => console.log("this is the response variable POST .JSON():", res))
         // .then(post =>)
-
     };
 
     // function insertBlogEntries(obj){
