@@ -120,9 +120,9 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     function insertBlogEntries(obj){
         const parent_container = document.getElementById("blog_parent_container")
-        const myH1 = document.createElement("h1");
-        myH1.textContent = obj.post_title;
-        parent_container.appendChild(myH1)
+        const myLink = document.createElement("a");
+        myLink.textContent = obj.file_path;
+        parent_container.appendChild(myLink)
     };
 
     if (!blogContainer){
