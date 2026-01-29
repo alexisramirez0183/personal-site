@@ -127,23 +127,27 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.setAttribute("id", "individual_blog_post")
             singlePost.setAttribute("href", post.file_path)
             
-            // Add Title of each post as an H3
+            // Create Title Element as H3
             const postTitle = document.createElement("h3");
             postTitle.classList.add("blog_title");
             postTitle.textContent = post.post_title;
-
+            
+            // Create description element as <p>
             const postDescription = document.createElement("p");
             postDescription.textContent = post.post_description;
             
+            // Create Date element as <p>
             const postDate = document.createElement("p");
             postDate.classList.add("blog_date");
             postDate.textContent = post.post_date;
 
+            // Append children to their respective Elements
             parent_container.appendChild(singlePost)
             singlePost.appendChild(postTitle, postDescription, postDate)
             singlePost.appendChild(postDescription)
             singlePost.appendChild(postDate)
 
+            post.addEventListener("click", showBlogModal)
         }
 
     }
@@ -154,6 +158,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog container found");
         console.log("attempting to run populate function")
         populate();
-        blogPost.addEventListener("click", showBlogModal);
+        // blogPost.addEventListener("click", showBlogModal);
     };
 });
