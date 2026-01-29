@@ -115,11 +115,11 @@ document.addEventListener("DOMContentLoaded",() =>{
         const date = Date.now();
         const requestURL = rootURL+ date;
         const request = new Request(requestURL);
-        const response = fetch(request);
+        const response = fetch(request).json();
         console.log(response);
-        const blogEntry = response.json();
+        // const blogEntry = response.json();
         console.log("attempting to run insertBlogEntries function")
-        insertBlogEntries();
+        insertBlogEntries(blogEntry);
     };
 
     function insertBlogEntries(obj){
