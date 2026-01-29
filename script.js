@@ -115,7 +115,9 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.json())
         .then(obj => {
             const data = obj;
+            const parent_container = document.getElementById("blog_parent_container")
             const myLink = document.createElement("a");
+            parent_container.appendChild(myLink)
             console.log("file path objects log", data)
             const postTitle = data[1].post_title
             console.log(postTitle)
