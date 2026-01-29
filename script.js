@@ -118,8 +118,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         // console.log(request)
         const response = fetch(requestURL);
         console.log("this is the response variable pre JSON:", response)
-        .then(response.json());
-        console.log("this is the response variable POST .JSON():", response)
+        .then(response.json())
+        .then(console.log("this is the response variable POST .JSON():", response))
         console.log("attempting to run insertBlogEntries function")
         insertBlogEntries(blogEntry);
     };
