@@ -149,20 +149,20 @@ document.addEventListener("DOMContentLoaded",() =>{
             
             // Add Title of each post as an H3
             const postTitle = document.createElement("h3");
-            const jsonTitle = post.post_date;
-            console.log("post date", jsonTitle);
             postTitle.classList.add("blog_title");
-            postTitle.textContent = jsonTitle
+            postTitle.textContent = post.post_title;
 
             const postDescription = document.createElement("p");
             
-            const postDate = document.createElement("p")
-            postDate.classList.add("blog_date")
+            const postDate = document.createElement("p");
+            postDate.classList.add("blog_date");
+            postDate.textContent = post.post_date;
 
             parent_container.appendChild(singlePost)
             singlePost.appendChild(postTitle, postDescription, postDate)
             singlePost.appendChild(postDescription)
             singlePost.appendChild(postDate)
+            
         }
 
     }
