@@ -115,21 +115,21 @@ document.addEventListener("DOMContentLoaded",() =>{
         const request = new Request(requestURL);
         const response = await fetch(request);
         const blogEntry = await reponse.json();
-        insertBlogEntries()
+        insertBlogEntries();
     };
 
     function insertBlogEntries(obj){
         const parent_container = document.getElementById("blog_parent_container")
         const myLink = document.createElement("a");
         myLink.textContent = obj.file_path;
-        parent_container.appendChild(myLink)
+        parent_container.appendChild(myLink);
     };
 
     if (!blogContainer){
         console.log("No blog container rendered")
     } else{
         console.log("blog container found");
-        insertBlogEntries();
+        populate();
         console.log("insert entries function ran")
     };
 });
