@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         }); 
     };
 
-    blogPost.addEventListener("click", showBlogModal);
+
 
     document.addEventListener("click", (e) => {
         if (e.target.matches("#closeBtn")){
@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     } else{
         console.log("blog container found");
         console.log("attempting to run populate function")
+        blogPost.addEventListener("click", showBlogModal);
         populate();
     };
 });
