@@ -111,12 +111,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     });
 
     function populate(){
-        const rootURL = "blog_posts.json?nocache=";
-        const date = Date.now();
-        const requestURL = rootURL+ date;
-        // const request = new Request(requestURL);
-        // console.log(request)
-        const response = fetch(requestURL);
+        fetch("blog_posts.json?nocache="+ Date.now())
         console.log("this is the response variable pre JSON:", response)
         .then(response.json())
         .then(console.log("this is the response variable POST .JSON():", response))
