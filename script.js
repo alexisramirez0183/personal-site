@@ -147,10 +147,12 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.setAttribute("id", "individual_blog_post")
             singlePost.setAttribute("href","[insert URL here]")
             
+            // Add Title of each post as an H3
             const postTitle = document.createElement("h3");
-            const jsonTitle = obj.post_title
+            const jsonTitle = obj.post_title;
             postTitle.classList.add("blog_title");
-            postTitle.textContent = jsonTitle
+            postTitle.textContent = jsonTitle;
+
             const postDescription = document.createElement("p");
             
             const postDate = document.createElement("p")
