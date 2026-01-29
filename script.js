@@ -113,7 +113,10 @@ document.addEventListener("DOMContentLoaded",() =>{
     function populate(){
         fetch("blog_posts.json?nocache="+ Date.now())
         .then(res => res.json())
-        .then(obj => console.log("this is the obj definition:", obj))
+        .then(obj => {
+            const myLink = document.createElement("a");
+            console.log("file path objects log", obj.file_path)
+        })
         // .then(post =>)
     };
 
