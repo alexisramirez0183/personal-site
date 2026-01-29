@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.json())
         .then(res => console.log("this is the response variable POST .JSON():", res))
         console.log("attempting to run insertBlogEntries function")
+        console.log("object output:", obj)
         insertBlogEntries(obj);
     };
 
