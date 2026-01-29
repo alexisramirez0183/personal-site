@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     function fetchPortfolioImages(){
         fetch("portfolio_images.json?nocache=" + Date.now())
         .then(res => res.json())
+        .then(res => console.log("this is the response in json format:", res))
         .then(images => {
         const gallery = document.getElementById("gallery_container");
 
@@ -114,18 +115,18 @@ document.addEventListener("DOMContentLoaded",() =>{
         fetch("blog_posts.json?nocache="+ Date.now())
         .then(res => res.json())
         .then(res => console.log("this is the response variable POST .JSON():", res))
-        console.log("attempting to run insertBlogEntries function")
-        insertBlogEntries();
+        .then(post =>)
+
     };
 
-    function insertBlogEntries(obj){
-        const parent_container = document.getElementById("blog_parent_container")
-        const myLink = document.createElement("a");
-        console.log("object output:", obj)
-        myLink.textContent = obj.file_path;
-        console.log("Attempting to append <a> tag to div")
-        parent_container.appendChild(myLink);
-    };
+    // function insertBlogEntries(obj){
+    //     const parent_container = document.getElementById("blog_parent_container")
+    //     const myLink = document.createElement("a");
+    //     console.log("object output:", obj)
+    //     myLink.textContent = obj.file_path;
+    //     console.log("Attempting to append <a> tag to div")
+    //     parent_container.appendChild(myLink);
+    // };
 
     if (!blogContainer){
         console.log("No blog container rendered")
