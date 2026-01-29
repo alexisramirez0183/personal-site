@@ -128,8 +128,9 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     async function populate(){
         const jsonURL = "blog_posts.json?nocache="+ Date.now()
-        console.log (jsonURL)
-    }
+        const request = new Request(jsonURL);
+        const response = await fetch(request);
+    };
 
     // function insertBlogEntries(obj){
     //     const parent_container = document.getElementById("blog_parent_container")
