@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
-    async function populate(){
+    function populate(){
         const rootURL = "blog_posts.json?nocache=";
         const date = Date.now();
         const requestURL = rootURL+ date;
