@@ -115,13 +115,13 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.json())
         .then(res => console.log("this is the response variable POST .JSON():", res))
         console.log("attempting to run insertBlogEntries function")
-        console.log("object output:", obj)
-        insertBlogEntries(obj);
+        insertBlogEntries();
     };
 
     function insertBlogEntries(obj){
         const parent_container = document.getElementById("blog_parent_container")
         const myLink = document.createElement("a");
+        console.log("object output:", obj)
         myLink.textContent = obj.file_path;
         console.log("Attempting to append <a> tag to div")
         parent_container.appendChild(myLink);
