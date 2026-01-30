@@ -92,6 +92,9 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog modal display changed to block!");
         const clickedPost = event.target;
         const postHref = clickedPost.href;
+        console.log("clicked element",event)
+        console.log("clicked element target", clickedPost)
+        console.log("clicked element href", postHref)
         fetch(postHref)
         .then(res => res.text())
         .then((html) =>{
