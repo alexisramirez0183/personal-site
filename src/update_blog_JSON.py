@@ -12,6 +12,7 @@ final_json = []
 for file in filenames:
     # Soup Setup
     file_path_for_soup = filepath + file
+    file_path_for_html = "blog_posts/" + file
     filehandle = open(file_path_for_soup)
     soup = BeautifulSoup(filehandle, features="html.parser")
 
@@ -28,7 +29,7 @@ for file in filenames:
     #Appending to post_info array
     single_post_json = {
             "post_title": post_title,
-            "file_path": file_path_for_soup,
+            "file_path": file_path_for_html,
             "post_date": post_date,
             "post_description": post_description
     }
