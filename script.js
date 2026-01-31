@@ -86,11 +86,11 @@ document.addEventListener("DOMContentLoaded",() =>{
         }
     });
 
-    function showBlogModal(event){
+    function showBlogModal(blogPost){
         event.preventDefault();
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
-        const clickedPost = event.target;
+        const clickedPost = blogpost;
         const postHref = clickedPost.href;
         console.log("clicked element",event)
         console.log("clicked element target", clickedPost)
