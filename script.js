@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         closeBtn.addEventListener("click", closeBlogModal);
         };
     };
-    
+
     async function populate(){
         const jsonURL = "blog_posts.json?nocache="+ Date.now()
         const request = new Request(jsonURL);
@@ -166,5 +166,5 @@ document.addEventListener("DOMContentLoaded",() =>{
         blogPosts.forEach(blogPost =>{
             addEventListener("click", showBlogModal)
         });
-    };
+    }
 });
