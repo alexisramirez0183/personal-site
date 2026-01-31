@@ -105,12 +105,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         });
     };
 
-    blogModal.addEventListener("click", e => {
-        if (e.target.matches(".closeBtn")) {
-            closeBlogModal();
-        }
-    });
-
     function closeBlogModal() {
         blogModal.style.display= "none";
     };
