@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.appendChild(postDescription)
             singlePost.appendChild(postDate)
 
-            singlePost.addEventListener("click",showBlogModal)
+            post.addEventListener("click",showBlogModal)
         }
 
     }
