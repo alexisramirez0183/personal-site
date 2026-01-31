@@ -93,9 +93,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog modal display changed to block!");
         const clickedPost = event.currentTarget;
         const postHref = clickedPost.href;
-        // const postHref = blogPosts.href
         console.log("clicked element target", clickedPost);
-        // console.log("blog  posts:",blogPosts)
         console.log("clicked element href", postHref);
         fetch(postHref)
         .then(res => res.text())
@@ -105,14 +103,13 @@ document.addEventListener("DOMContentLoaded",() =>{
         .catch((error) => {
         console.warn(error);
         });
-
-        if (!closeBtn){
-        console.log("close button for modal not found")
-        } else{
-        console.log("close button found!")
-        closeBtn.addEventListener("click", closeBlogModal);
-        };
     };
+
+    blogModal.addEventListener("click", e => {
+        if (e.target.matches(".closeBtn")) {
+            closeBlogModal();
+        }
+    });
 
     function closeBlogModal() {
         blogModal.style.display= "none";
@@ -170,9 +167,5 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("attempting to run populate function")
         populate();
         console.log("blog posts populated")
-        // blogPosts.forEach(function(element){
-        //     console.log("testing for each. element name here:",element)
-        //     element.addEventListener("click",showBlogModal)
-        // })
     }
 });
