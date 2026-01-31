@@ -78,14 +78,17 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     function closeModal() {
         modal.style.display = "none";
+    };
+    
+    function closeBlogModal() {
         blogModal.style.display= "none";
     };
 
-    document.addEventListener("keydown", e => {
-        if (e.key === "Escape") {
-            closeModal();
-        }
-    });
+    // document.addEventListener("keydown", e => {
+    //     if (e.key === "Escape") {
+    //         closeModal();
+    //     }
+    // });
 
     function showBlogModal(blogPost){
         event.preventDefault();
@@ -104,13 +107,12 @@ document.addEventListener("DOMContentLoaded",() =>{
         .catch((error) => {
         console.warn(error);
         }); 
+        if (!closeBtn){
+        console.log("close button for modal not found")
+        } else{
+        console.log("close button found!")
+        closeBtn.addEventListener("click", closeBlogModal);
     };
-
-    document.addEventListener("click", (e) => {
-        if (e.target.matches("#closeBtn")){
-            blogModal.style.display = "none"
-        }
-    });
 
     async function populate(){
         const jsonURL = "blog_posts.json?nocache="+ Date.now()
