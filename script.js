@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("Post Array:", postArray);
 
         populatePosts(postArray);
-        postArray.addEventListener("click",showBlogModal)
     };
 
     function populatePosts(obj){
@@ -164,5 +163,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog container found");
         console.log("attempting to run populate function")
         populate();
+        blogPosts.forEach(function(element){
+            element.addEventListener("click",showBlogModal)
+        })
     }
 });
