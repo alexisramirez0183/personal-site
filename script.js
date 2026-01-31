@@ -91,11 +91,11 @@ document.addEventListener("DOMContentLoaded",() =>{
         event.preventDefault();
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
-        // const clickedPost = event.target;
-        // const postHref = clickedPost.href;
-        const postHref = blogPosts.href
-        // console.log("clicked element target", clickedPost);
-        console.log("blog  posts:",blogPosts)
+        const clickedPost = event.currentTarget;
+        const postHref = clickedPost.href;
+        // const postHref = blogPosts.href
+        console.log("clicked element target", clickedPost);
+        // console.log("blog  posts:",blogPosts)
         console.log("clicked element href", postHref);
         fetch(postHref)
         .then(res => res.text())
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             postDate.textContent = post.post_date;
 
             // Append children to their respective Elements
-            singlePost.appendChild(postTitle, postDescription, postDate)
+            singlePost.append(postTitle, postDescription, postDate)
             // singlePost.appendChild(postDescription)
             // singlePost.appendChild(postDate)
             parent_container.appendChild(singlePost)
