@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog container found");
         console.log("attempting to run populate function")
         populate();
-        console.log(blogPosts)
+        console.log("blog posts variable",blogPosts)
         blogPosts.forEach(blogPost =>{
             addEventListener("click", showBlogModal)
         });
