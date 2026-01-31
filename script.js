@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const galleryContainer = document.getElementById("gallery_container");
     const blogModal = document.getElementById("blog_modal");
     const blogPosts = document.querySelectorAll("#individual_blog_post");
-    const blogContainer = document.getElementById("blog_parent_container")
+    const blogContainer = document.getElementById("blog_parent_container");
 
     // Contact Form
     if (!contact_form){
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         } else{
         console.log("close button found!")
         closeBtn.addEventListener("click", closeModal);
-    };
+        };
     };
 
     function closeModal() {
@@ -112,8 +112,9 @@ document.addEventListener("DOMContentLoaded",() =>{
         } else{
         console.log("close button found!")
         closeBtn.addEventListener("click", closeBlogModal);
+        };
     };
-
+    
     async function populate(){
         const jsonURL = "blog_posts.json?nocache="+ Date.now()
         const request = new Request(jsonURL);
