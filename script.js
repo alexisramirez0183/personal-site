@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("Post Array:", postArray);
 
         populatePosts(postArray);
+        postArray.addEventListener("click",showBlogModal)
     };
 
     function populatePosts(obj){
@@ -153,8 +154,6 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.appendChild(postTitle, postDescription, postDate)
             singlePost.appendChild(postDescription)
             singlePost.appendChild(postDate)
-
-            post.addEventListener("click",showBlogModal)
         }
 
     }
