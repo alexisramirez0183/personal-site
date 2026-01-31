@@ -152,10 +152,10 @@ document.addEventListener("DOMContentLoaded",() =>{
             postDate.textContent = post.post_date;
 
             // Append children to their respective Elements
-            parent_container.appendChild(singlePost)
             singlePost.appendChild(postTitle, postDescription, postDate)
-            singlePost.appendChild(postDescription)
-            singlePost.appendChild(postDate)
+            // singlePost.appendChild(postDescription)
+            // singlePost.appendChild(postDate)
+            parent_container.appendChild(singlePost)
 
             console.log("attempting to add event listener to singlePost")
             singlePost.addEventListener("click", showBlogModal)
