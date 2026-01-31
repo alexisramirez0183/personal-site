@@ -99,7 +99,13 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.text())
         .then((html) =>{
             blogModal.innerHTML=html;
-            console.log("html added to modal")
+            console.log("html added to modal");
+            if (!closeBtn){
+                console.log("close button for modal not found")
+            } else{
+                console.log("close button found!")
+                closeBtn.addEventListener("click", closeModal);
+            };
         })
         .catch((error) => {
         console.warn(error);
