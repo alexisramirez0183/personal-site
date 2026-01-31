@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
         const clickedPost = event.target;
-        console.log("blog post:", clickedPost)
         const postHref = clickedPost.href;
         console.log("clicked element target", clickedPost);
         console.log("clicked element href", postHref);
@@ -106,7 +105,8 @@ document.addEventListener("DOMContentLoaded",() =>{
         })
         .catch((error) => {
         console.warn(error);
-        }); 
+        });
+
         if (!closeBtn){
         console.log("close button for modal not found")
         } else{
@@ -156,7 +156,6 @@ document.addEventListener("DOMContentLoaded",() =>{
 
             console.log("attempting to add event listener to singlePost")
             singlePost.addEventListener("click", showBlogModal)
-
         }
 
     }
@@ -168,9 +167,9 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("attempting to run populate function")
         populate();
         console.log("blog posts populated")
-        blogPosts.forEach(function(element){
-            console.log("testing for each. element name here:",element)
-            element.addEventListener("click",showBlogModal)
-        })
+        // blogPosts.forEach(function(element){
+        //     console.log("testing for each. element name here:",element)
+        //     element.addEventListener("click",showBlogModal)
+        // })
     }
 });
