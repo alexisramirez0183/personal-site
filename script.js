@@ -153,6 +153,10 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.appendChild(postTitle, postDescription, postDate)
             singlePost.appendChild(postDescription)
             singlePost.appendChild(postDate)
+
+            console.log("attempting to add event listener to singlePost")
+            singlePost.addEventListener("click", showBlogModal)
+
         }
 
     }
@@ -163,6 +167,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("blog container found");
         console.log("attempting to run populate function")
         populate();
+        console.log("blog posts populated")
         blogPosts.forEach(function(element){
             console.log("testing for each. element name here:",element)
             element.addEventListener("click",showBlogModal)
