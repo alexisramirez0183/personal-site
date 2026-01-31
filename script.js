@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then(res => res.text())
         .then((html) =>{
             blogModal.innerHTML=html;
+            console.log("html added to modal")
         })
         .catch((error) => {
         console.warn(error);
@@ -152,7 +153,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             singlePost.addEventListener("click", showBlogModal)
         }
 
-    }
+    };
 
     if (!blogContainer){
         console.log("No blog container rendered")
@@ -161,5 +162,5 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("attempting to run populate function")
         populate();
         console.log("blog posts populated")
-    }
+    };
 });
