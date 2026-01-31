@@ -80,9 +80,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         modal.style.display = "none";
     };
     
-    function closeBlogModal() {
-        blogModal.style.display= "none";
-    };
 
     // document.addEventListener("keydown", e => {
     //     if (e.key === "Escape") {
@@ -94,9 +91,11 @@ document.addEventListener("DOMContentLoaded",() =>{
         event.preventDefault();
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
-        const clickedPost = event.target;
-        const postHref = clickedPost.href;
-        console.log("clicked element target", clickedPost);
+        // const clickedPost = event.target;
+        // const postHref = clickedPost.href;
+        const postHref = blogPosts.href
+        // console.log("clicked element target", clickedPost);
+        console.log("blog  posts:",blogPosts)
         console.log("clicked element href", postHref);
         fetch(postHref)
         .then(res => res.text())
@@ -113,6 +112,10 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("close button found!")
         closeBtn.addEventListener("click", closeBlogModal);
         };
+    };
+
+    function closeBlogModal() {
+        blogModal.style.display= "none";
     };
 
     async function populate(){
