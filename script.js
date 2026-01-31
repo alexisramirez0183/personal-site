@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     function closeModal() {
         modal.style.display = "none";
+        blogModal.style.display= "none";
     };
 
     document.addEventListener("keydown", e => {
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         event.preventDefault();
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
-        const clickedPost = blogpost;
+        const clickedPost = blogPost;
         const postHref = clickedPost.href;
         console.log("clicked element",event)
         console.log("clicked element target", clickedPost)
