@@ -90,15 +90,15 @@ document.addEventListener("DOMContentLoaded",() =>{
     //     }
     // });
 
-    function showBlogModal(blogPost){
+    function showBlogModal(){
         event.preventDefault();
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
         const clickedPost = blogPost;
         const postHref = clickedPost.href;
-        console.log("clicked element",event)
-        console.log("clicked element target", clickedPost)
-        console.log("clicked element href", postHref)
+        console.log("clicked element",event);
+        console.log("clicked element target", clickedPost);
+        console.log("clicked element href", postHref);
         fetch(postHref)
         .then(res => res.text())
         .then((html) =>{
@@ -164,6 +164,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("attempting to run populate function")
         populate();
         blogPosts.forEach(function(element){
+            console.log("testing for each. element name here:",element)
             element.addEventListener("click",showBlogModal)
         })
     }
