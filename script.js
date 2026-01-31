@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         .then((html) =>{
             blogModal.innerHTML=html;
             console.log("html added to modal");
+            const closeBtn = document.getElementById("closeBtn");
             if (!closeBtn){
                 console.log("close button for modal not found")
             } else{
