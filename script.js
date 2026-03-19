@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     const blogModal = document.getElementById("blog_modal");
     const blogPosts = document.querySelectorAll("#individual_blog_post");
     const blogContainer = document.getElementById("blog_parent_container");
+    const hpValue = document.getElementById("hp_value")
 
     // Contact Form
     if (!contact_form){
@@ -170,4 +171,21 @@ document.addEventListener("DOMContentLoaded",() =>{
         populate();
         console.log("blog posts populated")
     };
+
+    function getRandomInt(min,max) {
+        min=Math.ceil(1);
+        max=Math.floor(350);
+        return Math.floor(Math.random()* (max-min)) + min
+    }
+
+    if (!hpValue){
+        console.log("No hp value cell found rendered")
+    } else{
+        console.log("hp value cell found");
+        console.log("attempting to run populate getrandomint function");
+        console.log(getRandomInt());
+        
+    };
+
+
 });
