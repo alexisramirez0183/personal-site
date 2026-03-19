@@ -124,19 +124,18 @@ document.addEventListener("DOMContentLoaded",() =>{
         const response = await fetch(request);
         const postArray = await response.json();
         console.log("Post Array:", postArray);
-
-        //
-        console.log("attempting to sort")
-        posts.sort((a,b) => new Date(b.post.post_date) - new Date(a.post.post_date))
-        console.log("done attempting")
-        //
-
         populatePosts(postArray);
     };
 
     function populatePosts(obj){
         const parent_container = document.getElementById("blog_parent_container")
         const posts = obj
+
+        //
+        console.log("attempting to sort")
+        posts.sort((a,b) => new Date(b.post.post_date) - new Date(a.post.post_date))
+        console.log("done attempting")
+        //
 
         for (const post of posts) {
             const singlePost = document.createElement("a");
