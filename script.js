@@ -125,6 +125,10 @@ document.addEventListener("DOMContentLoaded",() =>{
         const postArray = await response.json();
         console.log("Post Array:", postArray);
 
+        //
+        posts.sort((a,b) => new Date(b.post.post_date) - new Date(a.post.post_date))
+        //
+
         populatePosts(postArray);
     };
 
@@ -158,10 +162,6 @@ document.addEventListener("DOMContentLoaded",() =>{
             console.log("attempting to add event listener to singlePost")
             singlePost.addEventListener("click", showBlogModal)
         }
-
-        //
-        posts.sort((a,b) => new Date(b.post.post_date) - new Date (a.post.post_date))
-        //
 
     };
 
