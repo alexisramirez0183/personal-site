@@ -93,6 +93,7 @@ nav{
     text-indent: 10px;
     align-content: center;
     color:white;
+    font-family: "Nimbus Mono PS",monospace;
     font-size: 1rem;
     text-decoration: none;
     border-width: 2px 4px 2px 4px;
