@@ -126,7 +126,9 @@ document.addEventListener("DOMContentLoaded",() =>{
         console.log("Post Array:", postArray);
 
         //
+        console.log("attempting to sort")
         posts.sort((a,b) => new Date(b.post.post_date) - new Date(a.post.post_date))
+        console.log("done attempting")
         //
 
         populatePosts(postArray);
