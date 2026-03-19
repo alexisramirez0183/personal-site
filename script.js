@@ -183,9 +183,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     } else{
         console.log("hp value cell found");
         console.log("attempting to run populate getrandomint function");
-        console.log(getRandomInt());
-        
-    };
-
-
+        const result = getRandomInt();
+        hpValue.textContent = result + "/350";    
+    }
 });
