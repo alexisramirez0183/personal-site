@@ -131,9 +131,6 @@ document.addEventListener("DOMContentLoaded",() =>{
     function populatePosts(obj){
         const parent_container = document.getElementById("blog_parent_container")
         const posts = obj
-        //
-        posts.sort((a,b) => new Date(b.post.post_date) - new Date (a.post.post_date))
-        //
 
         for (const post of posts) {
             const singlePost = document.createElement("a");
@@ -161,6 +158,10 @@ document.addEventListener("DOMContentLoaded",() =>{
             console.log("attempting to add event listener to singlePost")
             singlePost.addEventListener("click", showBlogModal)
         }
+
+        //
+        posts.sort((a,b) => new Date(b.post.post_date) - new Date (a.post.post_date))
+        //
 
     };
 
