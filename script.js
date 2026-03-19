@@ -124,6 +124,13 @@ document.addEventListener("DOMContentLoaded",() =>{
         const response = await fetch(request);
         const postArray = await response.json();
         console.log("Post Array:", postArray);
+
+        //
+        console.log("attempting to sort");
+        obj.sort((a,b) => new Date(b.obj.post_date) - new Date(a.obj.post_date));
+        console.log("array after attempting:", postArray);
+        //
+
         populatePosts(postArray);
     };
 
@@ -153,12 +160,6 @@ document.addEventListener("DOMContentLoaded",() =>{
             // Append children to their respective Elements
             singlePost.append(postTitle, postDescription, postDate)
             parent_container.appendChild(singlePost)
-
-                    //
-            console.log("attempting to sort")
-            singlePost.sort((a,b) => new Date(b.singlePost.postDate) - new Date(a.singlePost.postDate))
-            console.log("done attempting")
-            //
 
             console.log("attempting to add event listener to singlePost")
             singlePost.addEventListener("click", showBlogModal)
