@@ -131,6 +131,9 @@ document.addEventListener("DOMContentLoaded",() =>{
     function populatePosts(obj){
         const parent_container = document.getElementById("blog_parent_container")
         const posts = obj
+        //
+        posts.sort((a,b) => new Date(b.post.post_date) - new Date (a.post.post_date))
+        //
 
         for (const post of posts) {
             const singlePost = document.createElement("a");
@@ -153,8 +156,6 @@ document.addEventListener("DOMContentLoaded",() =>{
 
             // Append children to their respective Elements
             singlePost.append(postTitle, postDescription, postDate)
-            // singlePost.appendChild(postDescription)
-            // singlePost.appendChild(postDate)
             parent_container.appendChild(singlePost)
 
             console.log("attempting to add event listener to singlePost")
@@ -186,4 +187,6 @@ document.addEventListener("DOMContentLoaded",() =>{
         const result = getRandomInt();
         hpValue.textContent = result + "/350";    
     }
+
+
 });
