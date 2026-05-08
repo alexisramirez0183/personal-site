@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         //
         console.log("attempting to sort");
         // postArray.sort((a,b) => new Date(b.obj.post_date) - new Date(a.obj.post_date));
-        postArray.sort((a,b) => a.postDate - b.postDate)
+        postArray.sort((a,b) => a.post_date - b.post_date)
         console.log("array after attempting:", postArray);
         //
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             // Create Date element as <p>
             const postDate = document.createElement("p");
             postDate.classList.add("blog_date");
-            postDate.textContent = post.date;
+            postDate.textContent = post.post_date;
 
             // Append children to their respective Elements
             singlePost.append(postTitle, postDescription, postDate)
