@@ -144,7 +144,7 @@ nav{
     grid-column: 100%;
     gap: 10px;
     padding: 10px;
-    background-color:#FF814E
+    background-color:#FF814E;
     overflow-y: auto;
     border:solid white;
     border-width: 0px 2px 4px 2px;
