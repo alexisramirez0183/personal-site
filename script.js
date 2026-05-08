@@ -158,6 +158,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             const postDate = document.createElement("p");
             postDate.classList.add("blog_date");
             postDate.textContent = post.post_date;
+            postDate = new Date(postDate)
 
             // Append children to their respective Elements
             singlePost.append(postTitle, postDescription, postDate)
