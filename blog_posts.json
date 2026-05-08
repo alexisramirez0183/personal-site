@@ -1,26 +1,26 @@
 [
     {
         "post_title": "Blog Post 3 Test",
-        "file_path": "blog_posts/blog_post_test_3.html",
-        "post_date": "2026-01-21",
-        "post_description": "this is a test description to see if I can extract it"
-    },
-    {
-        "post_title": "Blog Post update Test",
-        "file_path": "blog_posts/blog_post_Upodate.html",
-        "post_date": "2026-01-21",
+        "file_path": "blog_posts/blog_post_test2.html",
+        "date": "2026-01-21",
         "post_description": "this is a test description to see if I can extract it"
     },
     {
         "post_title": "An Actual Post?",
         "file_path": "blog_posts/blog_post_test_1.html",
-        "post_date": "2026-01-30",
+        "date": "2026-01-30",
         "post_description": "I yap about building this website"
     },
     {
         "post_title": "Blog Post 3 Test",
-        "file_path": "blog_posts/blog_post_test2.html",
-        "post_date": "2026-01-21",
+        "file_path": "blog_posts/blog_post_test_3.html",
+        "date": "2026-01-21",
+        "post_description": "this is a test description to see if I can extract it"
+    },
+    {
+        "post_title": "Blog Post update Test",
+        "file_path": "blog_posts/blog_post_Upodate.html",
+        "date": "2026-01-21",
         "post_description": "this is a test description to see if I can extract it"
     }
 ]
