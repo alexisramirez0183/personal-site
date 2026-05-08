@@ -82,13 +82,13 @@ document.addEventListener("DOMContentLoaded",() =>{
     };
     
 
-    // document.addEventListener("keydown", e => {
-    //     if (e.key === "Escape") {
-    //         closeModal();
-    //     }
-    // });
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
 
-    function showBlogModal(){
+    function showBlogModal(event){
         event.preventDefault();
         blogModal.style.display = "block";
         console.log("blog modal display changed to block!");
@@ -125,13 +125,15 @@ document.addEventListener("DOMContentLoaded",() =>{
         const postArray = await response.json();
         console.log("Post Array:", postArray);
 
+        populatePosts(postArray);
+        
         //
         console.log("attempting to sort");
-        obj.sort((a,b) => new Date(b.obj.post_date) - new Date(a.obj.post_date));
+        // postArray.sort((a,b) => new Date(b.obj.post_date) - new Date(a.obj.post_date));
+        postArray.sort((a,b) => a.postDate - b.postDate)
         console.log("array after attempting:", postArray);
         //
 
-        populatePosts(postArray);
     };
 
     function populatePosts(obj){
@@ -155,7 +157,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             // Create Date element as <p>
             const postDate = document.createElement("p");
             postDate.classList.add("blog_date");
-            postDate.textContent = post.post_date;
+            postDate.textContent = post.date;
 
             // Append children to their respective Elements
             singlePost.append(postTitle, postDescription, postDate)
@@ -190,6 +192,5 @@ document.addEventListener("DOMContentLoaded",() =>{
         const result = getRandomInt();
         hpValue.textContent = result + "/350";    
     }
-
 
 });
