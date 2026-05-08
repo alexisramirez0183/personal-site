@@ -123,17 +123,10 @@ document.addEventListener("DOMContentLoaded",() =>{
         const request = new Request(jsonURL);
         const response = await fetch(request);
         const postArray = await response.json();
+        postArray.sort((a,b) => new Date(b.post_date) - new Date(a.post_date));
         console.log("Post Array:", postArray);
 
         populatePosts(postArray);
-        
-        //
-        console.log("attempting to sort");
-        // postArray.sort((a,b) => new Date(b.obj.post_date) - new Date(a.obj.post_date));
-        postArray.sort((a,b) => a.post_date - b.post_date)
-        console.log("array after attempting:", postArray);
-        //
-
     };
 
     function populatePosts(obj){
@@ -141,6 +134,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         const posts = obj
 
         for (const post of posts) {
+
             const singlePost = document.createElement("a");
             singlePost.setAttribute("id", "individual_blog_post")
             singlePost.setAttribute("href", post.file_path)
@@ -157,17 +151,17 @@ document.addEventListener("DOMContentLoaded",() =>{
             // Create Date element as <p>
             const postDate = document.createElement("p");
             postDate.classList.add("blog_date");
-            // postDate.textContent = post.post_date;
-            postDate.Date = post.post_date;
+            postDate.textContent = post.post_date;
+            post.post_date = new Date(post.post_date);
 
             // Append children to their respective Elements
-            singlePost.append(postTitle, postDescription, postDate)
-            parent_container.appendChild(singlePost)
+            singlePost.append(postTitle, postDescription, postDate);
+            parent_container.appendChild(singlePost);
 
-            console.log("attempting to add event listener to singlePost")
-            singlePost.addEventListener("click", showBlogModal)
+            console.log("attempting to add event listener to singlePost");
+            singlePost.addEventListener("click", showBlogModal);
         }
-
+        
     };
 
     if (!blogContainer){
