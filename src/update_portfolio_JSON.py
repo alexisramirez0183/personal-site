@@ -5,7 +5,7 @@ filepath = './Images/Portfolio Images'
 
 filenames = os.listdir(filepath)
 
-print(f"names in Images Folder", filenames) 
+print(f"names in Portfolio Images Folder", filenames) 
 
 json_file = "./portfolio_images.json"
 
