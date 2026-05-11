@@ -1,7 +1,7 @@
 import os
 import json
 
-filepath = './Images/'
+filepath = './Images/Portfolio Images'
 
 filenames = os.listdir(filepath)
 
