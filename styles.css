@@ -424,6 +424,21 @@ button{
     grid-template-rows: 1fr 1fr;
   }
 
+  #modal{
+    display:none;
+    /* scale: 80%; */
+    max-width: 90vw;
+    position:absolute;
+    align-self: center;
+    justify-items: center;
+    justify-self: center;
+    border-width: 20px;
+    }
+
+    #modalImg{
+        width:100%
+    }
+
 
   /* img{
     justify-self: center;
