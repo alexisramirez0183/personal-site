@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded",() =>{
                 img.src = "./Images/Portfolio Images/" + file;
                 img.className = "portfolio_image";
                 img.alt = file;
+                img.style.objectFit = "cover"
                 gallery.appendChild(img);
                 img.addEventListener("click",showModal);
             });
