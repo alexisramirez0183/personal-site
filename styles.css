@@ -386,7 +386,6 @@ button{
   #gallery_container{
     display: grid;
     grid-template-columns: 1fr !important;
-    background-color: red !important;
   }
 
   #social_container{
