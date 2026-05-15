@@ -92,6 +92,8 @@ document.addEventListener("DOMContentLoaded",() =>{
     function showBlogModal(event){
         event.preventDefault();
         blogModal.style.display = "block";
+        blogModal.style.width = "80vw";
+        blogModal.style.overflowY = "auto"
         console.log("blog modal display changed to block!");
         const clickedPost = event.currentTarget;
         const postHref = clickedPost.href;
