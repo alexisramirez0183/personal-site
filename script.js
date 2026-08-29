@@ -1,194 +1,199 @@
-document.addEventListener("DOMContentLoaded",() =>{
+document.addEventListener("DOMContentLoaded", () => {
+  const send_button = document.getElementById("send_button");
+  const name_input = document.getElementById("name_input");
+  const email = document.getElementById("email_input");
+  const message = document.getElementById("message_input");
+  const contact_form = document.getElementById("contact_form");
+  const portfolio_modal = document.getElementById("portfolio_modal");
+  const galleryImages = document.querySelectorAll("#gallery_container img");
+  const closeBtn = document.getElementById("closeBtn");
+  const galleryContainer = document.getElementById("gallery_container");
+  const blogModal = document.getElementById("blog_modal");
+  const blogPosts = document.querySelectorAll("#individual_blog_post");
+  const blogContainer = document.getElementById("blog_parent_container");
+  const hpValue = document.getElementById("hp_value");
 
-    const send_button = document.getElementById("send_button");
-    const name_input = document.getElementById("name_input");
-    const email = document.getElementById("email_input");
-    const message = document.getElementById("message_input");
-    const contact_form = document.getElementById("contact_form");
-    const modal = document.getElementById("modal");
-    const galleryImages = document.querySelectorAll("#gallery_container img");
-    const closeBtn = document.getElementById("closeBtn");
-    const galleryContainer = document.getElementById("gallery_container");
-    const blogModal = document.getElementById("blog_modal");
-    const blogPosts = document.querySelectorAll("#individual_blog_post");
-    const blogContainer = document.getElementById("blog_parent_container");
-    const hpValue = document.getElementById("hp_value")
+  // Contact Form
+  if (!contact_form) {
+    console.log("contact form not on page");
+  } else {
+    console.log("contact form found!");
+    send_button.addEventListener("click", submitForm);
+  }
 
-    // Contact Form
-    if (!contact_form){
-        console.log("contact form not on page")
-    } else{
-        console.log("contact form found!")
-        send_button.addEventListener("click", submitForm);
-    };
-
-    function submitForm(event){
+  function submitForm(event) {
     event.preventDefault();
     console.log("name input:", name_input.value);
     console.log("email input:", email.value);
-    console.log("message input:",message.value);
+    console.log("message input:", message.value);
     contact_form.submit();
     dataLayer.push({
-        event:'submitContact',
-        name: name_input.value,
-    })
-    };
+      event: "submitContact",
+      name: name_input.value,
+    });
+  }
 
-    // Gallery 
+  // Gallery
 
-    if (!galleryContainer){
-        console.log("No gallery container rendered")
-    } else{
-        console.log("gallery container found");
-        fetchPortfolioImages();
-    };
+  if (!galleryContainer) {
+    console.log("No gallery container rendered");
+  } else {
+    console.log("gallery container found");
+    fetchPortfolioImages();
+  }
 
-    function fetchPortfolioImages(){
-        fetch("portfolio_images.json?nocache=" + Date.now())
-        .then(res => res.json())
-        .then(images => {
+  function fetchPortfolioImages() {
+    fetch("portfolio_images.json?nocache=" + Date.now())
+      .then((res) => res.json())
+      .then((images) => {
         const gallery = document.getElementById("gallery_container");
 
-            images.forEach(file => {
-                const img = document.createElement("img");
-                img.src = "./Images/Portfolio Images/" + file;
-                img.className = "portfolio_image";
-                img.alt = file;
-                img.style.objectFit = "cover"
-                gallery.appendChild(img);
-                img.addEventListener("click",showModal);
-            });
-        })
-        .catch(err => console.error(err));
-    };
-
-    function showModal(img){
-        console.log("galleryImage Clicked!")
-        const clickedImg = event.target;
-        const src = clickedImg.src;
-        const alt = clickedImg.alt;
-        modalImg.src = src;
-        modalImg.alt = alt;
-        modal.style.display = "block";
-        if (!closeBtn){
-        console.log("close button for modal not found")
-        } else{
-        console.log("close button found!")
-        closeBtn.addEventListener("click", closeModal);
-        };
-    };
-
-    function closeModal() {
-        modal.style.display = "none";
-    };
-    
-
-    document.addEventListener("keydown", e => {
-        if (e.key === "Escape") {
-            closeModal();
-        }
-    });
-
-    function showBlogModal(event){
-        event.preventDefault();
-        blogModal.style.display = "block";
-        blogModal.style.width = "80vw";
-        blogModal.style.overflowY = "auto"
-        console.log("blog modal display changed to block!");
-        const clickedPost = event.currentTarget;
-        const postHref = clickedPost.href;
-        console.log("clicked element target", clickedPost);
-        console.log("clicked element href", postHref);
-        fetch(postHref)
-        .then(res => res.text())
-        .then((html) =>{
-            blogModal.innerHTML=html;
-            console.log("html added to modal");
-            const closeBtn = document.getElementById("closeBtn");
-            if (!closeBtn){
-                console.log("close button for modal not found")
-            } else{
-                console.log("close button found!")
-                closeBtn.addEventListener("click", closeBlogModal);
-            };
-        })
-        .catch((error) => {
-        console.warn(error);
+        images.forEach((file) => {
+          const img = document.createElement("img");
+          img.src = "./Images/Portfolio Images/" + file;
+          img.className = "portfolio_image";
+          img.alt = file;
+          img.style.objectFit = "cover";
+          gallery.appendChild(img);
+          img.addEventListener("click", showModal);
         });
-    };
+      })
+      .catch((err) => console.error(err));
+  }
 
-    function closeBlogModal() {
-        blogModal.style.display= "none";
-    };
+  function showModal(img) {
+    console.log("galleryImage Clicked!");
+    const clickedImg = event.target;
+    const src = clickedImg.src;
+    const alt = clickedImg.alt;
+    modalImg.src = src;
+    modalImg.alt = alt;
+    portfolio_modal.style.display = "block";
+    portfolio_modal.style.maxWidth = "70vw";
+    portfolio_modal.style.position = "absolute";
+    portfolio_modal.style.alignSelf = "center";
+    portfolio_modal.style.justifyItems = "center";
+    portfolio_modal.style.justifySelf = "center";
+    portfolio_modal.style.border = "solid";
+    portfolio_modal.style.borderWidth = "4px 2px 4px 2px";
+    portfolio_modal.style.borderColor = "white";
+    modalImg.style.maxWidth = "100%";
 
-    async function populate(){
-        const jsonURL = "blog_posts.json?nocache="+ Date.now()
-        const request = new Request(jsonURL);
-        const response = await fetch(request);
-        const postArray = await response.json();
-        postArray.sort((a,b) => new Date(b.post_date) - new Date(a.post_date));
-        console.log("Post Array:", postArray);
+    if (!closeBtn) {
+      console.log("close button for modal not found");
+    } else {
+      console.log("close button found!");
+      closeBtn.addEventListener("click", closeModal);
+    }
+  }
 
-        populatePosts(postArray);
-    };
+  function closeModal() {
+    portfolio_modal.style.display = "none";
+  }
 
-    function populatePosts(obj){
-        const parent_container = document.getElementById("blog_parent_container")
-        const posts = obj
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  });
 
-        for (const post of posts) {
-
-            const singlePost = document.createElement("a");
-            singlePost.setAttribute("id", "individual_blog_post")
-            singlePost.setAttribute("href", post.file_path)
-            
-            // Create Title Element as H3
-            const postTitle = document.createElement("h3");
-            postTitle.classList.add("blog_title");
-            postTitle.textContent = post.post_title;
-            
-            // Create description element as <p>
-            const postDescription = document.createElement("p");
-            postDescription.textContent = post.post_description;
-            
-            // Create Date element as <p>
-            const postDate = document.createElement("p");
-            postDate.classList.add("blog_date");
-            postDate.textContent = post.post_date;
-            post.post_date = new Date(post.post_date);
-
-            // Append children to their respective Elements
-            singlePost.append(postTitle, postDescription, postDate);
-            parent_container.appendChild(singlePost);
-
-            console.log("attempting to add event listener to singlePost");
-            singlePost.addEventListener("click", showBlogModal);
+  function showBlogModal(event) {
+    event.preventDefault();
+    blogModal.style.display = "block";
+    blogModal.style.width = "80vw";
+    blogModal.style.overflowY = "auto";
+    console.log("blog modal display changed to block!");
+    const clickedPost = event.currentTarget;
+    const postHref = clickedPost.href;
+    console.log("clicked element target", clickedPost);
+    console.log("clicked element href", postHref);
+    fetch(postHref)
+      .then((res) => res.text())
+      .then((html) => {
+        blogModal.innerHTML = html;
+        console.log("html added to modal");
+        const closeBtn = document.getElementById("closeBtn");
+        if (!closeBtn) {
+          console.log("close button for modal not found");
+        } else {
+          console.log("close button found!");
+          closeBtn.addEventListener("click", closeBlogModal);
         }
-        
-    };
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+  }
 
-    if (!blogContainer){
-        console.log("No blog container rendered")
-    } else{
-        console.log("blog container found");
-        console.log("attempting to run populate function")
-        populate();
-        console.log("blog posts populated")
-    };
+  function closeBlogModal() {
+    blogModal.style.display = "none";
+  }
 
-    function getRandomInt(min,max) {
-        min=Math.ceil(1);
-        max=Math.floor(350);
-        return Math.floor(Math.random()* (max-min)) + min
+  async function populate() {
+    const jsonURL = "blog_posts.json?nocache=" + Date.now();
+    const request = new Request(jsonURL);
+    const response = await fetch(request);
+    const postArray = await response.json();
+    postArray.sort((a, b) => new Date(b.post_date) - new Date(a.post_date));
+    console.log("Post Array:", postArray);
+
+    populatePosts(postArray);
+  }
+
+  function populatePosts(obj) {
+    const parent_container = document.getElementById("blog_parent_container");
+    const posts = obj;
+
+    for (const post of posts) {
+      const singlePost = document.createElement("a");
+      singlePost.setAttribute("id", "individual_blog_post");
+      singlePost.setAttribute("href", post.file_path);
+
+      // Create Title Element as H3
+      const postTitle = document.createElement("h3");
+      postTitle.classList.add("blog_title");
+      postTitle.textContent = post.post_title;
+
+      // Create description element as <p>
+      const postDescription = document.createElement("p");
+      postDescription.textContent = post.post_description;
+
+      // Create Date element as <p>
+      const postDate = document.createElement("p");
+      postDate.classList.add("blog_date");
+      postDate.textContent = post.post_date;
+      post.post_date = new Date(post.post_date);
+
+      // Append children to their respective Elements
+      singlePost.append(postTitle, postDescription, postDate);
+      parent_container.appendChild(singlePost);
+
+      console.log("attempting to add event listener to singlePost");
+      singlePost.addEventListener("click", showBlogModal);
     }
+  }
 
-    if (!hpValue){
-        console.log("No hp value cell found rendered")
-    } else{
-        console.log("hp value cell found");
-        console.log("attempting to run populate getrandomint function");
-        const result = getRandomInt();
-        hpValue.textContent = result + "/350";    
-    }
+  if (!blogContainer) {
+    console.log("No blog container rendered");
+  } else {
+    console.log("blog container found");
+    console.log("attempting to run populate function");
+    populate();
+    console.log("blog posts populated");
+  }
 
+  function getRandomInt(min, max) {
+    min = Math.ceil(1);
+    max = Math.floor(350);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  if (!hpValue) {
+    console.log("No hp value cell found rendered");
+  } else {
+    console.log("hp value cell found");
+    console.log("attempting to run populate getrandomint function");
+    const result = getRandomInt();
+    hpValue.textContent = result + "/350";
+  }
 });
