@@ -381,6 +381,10 @@ button {
   padding: 20px;
 }
 
+a {
+  color: white;
+}
+
 @media screen and (width <= 600px) {
   #body_container,
   #homepage_body_container,
